@@ -50,6 +50,30 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
+.nav-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33,163,102,0.15);
+  border: 1px solid rgba(33,163,102,0.35);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #7dffc4;
+  white-space: nowrap;
+}
+
+.nav-availability::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #21a366;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
 .nav-logo {
   font-size: 1rem;
   font-weight: 700;
@@ -445,6 +469,7 @@ footer {
 /* ── MOBILE ── */
 @media (max-width: 640px) {
   .nav-links { display: none; }
+  .nav-availability { display: none; }
   .hero { padding: 3rem 1.5rem 2rem; min-height: 80vh; }
   section { padding: 3.5rem 1.5rem; }
 }
