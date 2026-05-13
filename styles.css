@@ -252,8 +252,42 @@ section {
 
 .cap-desc {
   font-size: 0.875rem;
-  color: #4b5563;
+  color: var(--navy);
   line-height: 1.6;
+}
+
+.cap-row-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+  opacity: 0.7;
+}
+
+.cap-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 2.75rem 0 0.5rem;
+}
+
+.cap-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(56,189,248,0.25), transparent);
+}
+
+.cap-divider-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--sky);
+  opacity: 0.6;
+  white-space: nowrap;
 }
 
 /* ── RESULTS ── */
