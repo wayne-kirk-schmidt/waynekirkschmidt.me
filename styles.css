@@ -466,6 +466,90 @@ footer {
   transform: none;
 }
 
+/* ── C.O.D.E. DIAGRAM ── */
+#code { background: rgba(10,25,50,0.4); }
+
+.code-diagram {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  grid-template-rows: auto 60px auto;
+  gap: 0;
+  margin-top: 2rem;
+  max-width: 680px;
+}
+
+.code-card {
+  background: var(--frost-lg);
+  border-radius: 14px;
+  padding: 1.5rem;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.code-letter {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.code-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 0.5rem;
+}
+
+.code-desc {
+  font-size: 0.875rem;
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+/* Grid placement */
+#code-c         { grid-column: 1; grid-row: 1; }
+.code-arrow-top { grid-column: 2; grid-row: 1; display: flex; align-items: center; justify-content: center; }
+#code-o         { grid-column: 3; grid-row: 1; }
+.code-arrow-right  { grid-column: 3; grid-row: 2; display: flex; align-items: center; justify-content: center; }
+#code-d         { grid-column: 3; grid-row: 3; }
+.code-arrow-bottom { grid-column: 2; grid-row: 3; display: flex; align-items: center; justify-content: center; }
+#code-e         { grid-column: 1; grid-row: 3; }
+.code-arrow-left   { grid-column: 1; grid-row: 2; display: flex; align-items: center; justify-content: center; }
+
+.arrow-svg { width: 100%; height: 100%; }
+
+.code-copy {
+  font-size: 0.33em;
+  vertical-align: super;
+  font-weight: 400;
+  color: var(--sky);
+}
+
+.code-mindset {
+  margin-top: 3rem;
+  font-style: italic;
+  color: var(--light);
+  font-size: 1rem;
+}
+
+
+  margin-top: 2rem;
+  font-style: italic;
+  color: var(--light);
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .code-diagram {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  .code-arrow-top, .code-arrow-right, .code-arrow-bottom, .code-arrow-left { display: none; }
+  #code-c, #code-o, #code-d, #code-e { grid-column: 1 !important; grid-row: auto !important; }
+}
+
 /* ── MOBILE ── */
 @media (max-width: 640px) {
   .nav-links { display: none; }
