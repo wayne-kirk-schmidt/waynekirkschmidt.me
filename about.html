@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me — Wayne Kirk Schmidt</title>
-  <meta name="description" content="Capabilities, disciplines, methodology, and background. Wayne Kirk Schmidt, Principal Technologist."/>
+  <meta name="description" content="Disciplines, methodology, and documents. Wayne Kirk Schmidt, Principal Technologist."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300&display=swap" rel="stylesheet"/>
@@ -12,55 +12,37 @@
   <link rel="dns-prefetch" href="https://changeis.io"/>
   <link rel="stylesheet" href="./styles.css"/>
   <style>
-    .page {
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: 58px 1fr 54px;
-    }
+    .page { min-height: 100vh; display: grid; grid-template-rows: 58px 1fr 54px; }
 
-    /* HEADER */
     .hdr {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
-      padding: 0 2rem;
-      background: rgba(15,39,66,0.55);
-      backdrop-filter: blur(16px);
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; padding: 0 2rem;
+      background: rgba(15,39,66,0.55); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
     }
     .hdr-name { font-size: 1rem; font-weight: 700; color: var(--white); text-decoration: none; }
-    .hdr-center { display: flex; justify-content: center; }
     .hdr-avail {
       display: inline-flex; align-items: center; gap: 7px;
       background: rgba(33,163,102,0.15); border: 1px solid rgba(33,163,102,0.35);
       border-radius: 999px; padding: 4px 14px;
-      font-size: 0.72rem; font-weight: 700; color: #7dffc4; letter-spacing: 0.3px; white-space: nowrap;
+      font-size: 0.72rem; font-weight: 700; color: #7dffc4; white-space: nowrap;
     }
     .hdr-avail::before {
       content: ''; width: 6px; height: 6px; border-radius: 50%;
       background: #21a366; animation: pulse 2s infinite; flex-shrink: 0;
     }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-    .hdr-right { display: flex; justify-content: flex-end; gap: 1rem; align-items: center; }
-    .hdr-nav-link { color: var(--light); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.15s; }
-    .hdr-nav-link:hover { color: var(--white); }
-    .hdr-nav-link.active { color: var(--white); }
+    .hdr-right { display: flex; justify-content: flex-end; gap: 1.5rem; align-items: center; }
+    .hdr-link { color: var(--light); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.15s; }
+    .hdr-link:hover, .hdr-link.active { color: var(--white); }
     .hdr-cta {
       background: var(--brand); color: var(--white); padding: 0.45rem 1.1rem;
       border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.82rem; transition: background 0.2s;
     }
     .hdr-cta:hover { background: var(--accent); }
 
-    /* CONTENT */
-    .content {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3rem 2rem 4rem;
-      width: 100%;
-    }
+    .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 4rem; width: 100%; }
 
     .eyebrow {
       font-size: 0.65rem; font-weight: 700; letter-spacing: 2.5px;
@@ -68,22 +50,15 @@
     }
     .section-title {
       font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800;
-      line-height: 1.1; letter-spacing: -0.5px; color: var(--white);
-      margin-bottom: 0.75rem;
+      line-height: 1.1; letter-spacing: -0.5px; color: var(--white); margin-bottom: 0.75rem;
     }
     .section-intro {
       font-size: 0.95rem; color: var(--light); line-height: 1.75;
-      max-width: 620px; margin-bottom: 2.5rem;
+      max-width: 620px; margin-bottom: 2rem;
     }
-    .section-divider {
-      border: none; border-top: 1px solid var(--border);
-      margin: 3rem 0;
-    }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 
-    /* DISCIPLINES */
-    .cap-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem;
-    }
+    .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     @media (max-width: 720px) { .cap-grid { grid-template-columns: 1fr; } }
     .cap-card {
       background: var(--frost-lg); border-radius: 12px; padding: 1.4rem;
@@ -92,10 +67,7 @@
     .cap-name { font-size: 0.9rem; font-weight: 700; color: var(--brand); margin-bottom: 0.5rem; }
     .cap-desc { font-size: 0.82rem; color: var(--navy); line-height: 1.6; }
 
-    /* CODE */
-    .code-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
-    }
+    .code-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
     @media (max-width: 720px) { .code-grid { grid-template-columns: repeat(2, 1fr); } }
     .code-card {
       background: var(--frost-lg); border-radius: 12px; padding: 1.4rem;
@@ -105,10 +77,7 @@
     .code-name { font-size: 0.85rem; font-weight: 700; color: var(--brand); margin-bottom: 0.4rem; }
     .code-desc { font-size: 0.8rem; color: var(--navy); line-height: 1.6; }
 
-    /* DOCUMENTS */
-    .docs-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-    }
+    .docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     @media (max-width: 720px) { .docs-grid { grid-template-columns: 1fr; } }
     .doc-card {
       display: flex; flex-direction: column; gap: 8px;
@@ -121,45 +90,38 @@
     .doc-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; flex: 1; }
     .doc-action { font-size: 0.75rem; font-weight: 700; color: var(--sky); }
 
-    /* FOOTER */
     .ftr {
-      display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center;
-      padding: 0 2rem; border-top: 1px solid var(--border); background: rgba(10,25,50,0.6);
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; padding: 0 2rem;
+      border-top: 1px solid var(--border); background: rgba(10,25,50,0.6);
     }
     .ftr-left { display: flex; gap: 1.25rem; }
+    .ftr-right { display: flex; justify-content: flex-end; gap: 1.25rem; }
     .ftr-left a, .ftr-right a {
       color: var(--muted); text-decoration: none; font-size: 0.78rem; font-weight: 500; transition: color 0.15s;
     }
     .ftr-left a:hover, .ftr-right a:hover { color: var(--light); }
-    .ftr-center { text-align: center; font-size: 0.72rem; color: var(--muted); }
-    .ftr-right { display: flex; justify-content: flex-end; gap: 0.75rem; }
+    .ftr-copy { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
   </style>
 </head>
 <body>
-
 <div class="page">
 
   <header class="hdr">
     <a class="hdr-name" href="./index.html">Wayne Kirk Schmidt</a>
-    <div class="hdr-center">
-      <span class="hdr-avail">Available · Fractional · Advisory · Full-time · Boston · Tokyo · Remote</span>
-    </div>
+    <span class="hdr-avail">Available · Fractional · Advisory · Full-time · Boston · Tokyo · Remote</span>
     <div class="hdr-right">
-      <a class="hdr-nav-link active" href="./about.html">About Me</a>
-      <a class="hdr-nav-link" href="https://casestudies.changeis.io">Case Studies</a>
+      <a class="hdr-link active" href="./about.html">About Me</a>
+      <a class="hdr-link" href="https://casestudies.changeis.io">Case Studies</a>
       <a class="hdr-cta" href="./contact.html">Get in Touch</a>
     </div>
   </header>
 
   <main class="content">
 
-    <!-- WHO -->
     <p class="eyebrow">About Me</p>
     <h1 class="section-title">Three disciplines.<br>One integrated practice.</h1>
-    <p class="section-intro">
-      Most practitioners specialize in one area. I operate at the intersection of all three
-      because the hardest problems live in the gaps between them.
-    </p>
+    <p class="section-intro">Most practitioners specialize in one area. I operate at the intersection of all three because the hardest problems live in the gaps between them.</p>
 
     <div class="cap-grid">
       <div class="cap-card">
@@ -176,9 +138,8 @@
       </div>
     </div>
 
-    <hr class="section-divider"/>
+    <hr/>
 
-    <!-- CODE -->
     <p class="eyebrow">How I Think</p>
     <h2 class="section-title">C.O.D.E.<sup style="font-size:0.4em;vertical-align:super;color:var(--sky);">&copy;</sup></h2>
     <p class="section-intro">The best systems don't just run: they learn. Every platform I build is grounded in this principle.</p>
@@ -206,9 +167,8 @@
       </div>
     </div>
 
-    <hr class="section-divider"/>
+    <hr/>
 
-    <!-- DOCUMENTS -->
     <p class="eyebrow">Documents</p>
     <h2 class="section-title">This is me.</h2>
     <p class="section-intro">Full CV, biography, and technical profile available for download.</p>
@@ -235,14 +195,15 @@
 
   <footer class="ftr">
     <div class="ftr-left">
+      <a href="./index.html">Home</a>
       <a href="https://changeis.io">ChangeIS</a>
-      <a href="https://casestudies.changeis.io">Case Studies</a>
       <a href="https://backofthenapkin.tech">Blog</a>
     </div>
-    <div class="ftr-center">Wayne Kirk Schmidt &middot; Boston &middot; Tokyo &middot; Global &middot; &copy; 2026</div>
+    <span class="ftr-copy">Wayne Kirk Schmidt · Boston · Tokyo · Global · © 2026</span>
     <div class="ftr-right">
       <a href="https://linkedin.com/in/waynekirkschmidt" target="_blank">LinkedIn</a>
       <a href="https://github.com/wayne-kirk-schmidt" target="_blank">GitHub</a>
+      <a href="./contact.html">Get in Touch</a>
     </div>
   </footer>
 
