@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get in Touch — Wayne Kirk Schmidt</title>
+  <meta name="description" content="Start a conversation with Wayne Kirk Schmidt. Book a call or send a message."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="./background.webp" as="image" type="image/webp"/>
+  <link rel="dns-prefetch" href="https://changeis.io"/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+
+    .page {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 58px 1fr 54px;
+    }
+
+    /* HEADER — same as index */
+    .hdr {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center;
+      padding: 0 2rem; background: rgba(15,39,66,0.55); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-name { font-size: 1rem; font-weight: 700; color: var(--white); text-decoration: none; }
+    .hdr-center { display: flex; justify-content: center; }
+    .hdr-avail {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(33,163,102,0.15); border: 1px solid rgba(33,163,102,0.35);
+      border-radius: 999px; padding: 4px 14px;
+      font-size: 0.72rem; font-weight: 700; color: #7dffc4; letter-spacing: 0.3px; white-space: nowrap;
+    }
+    .hdr-avail::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: #21a366; animation: pulse 2s infinite; flex-shrink: 0;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hdr-right { display: flex; justify-content: flex-end; gap: 1rem; align-items: center; }
+    .hdr-nav-link { color: var(--light); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.15s; }
+    .hdr-nav-link:hover { color: var(--white); }
+    .hdr-cta {
+      background: var(--brand); color: var(--white); padding: 0.45rem 1.1rem;
+      border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.82rem;
+      transition: background 0.2s; opacity: 0.4; pointer-events: none;
+    }
+
+    /* MAIN — two columns centered */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+      align-self: center;
+      padding: 0 2rem;
+    }
+    .col-div { background: var(--border); margin: 2.5rem 0; }
+    .col { padding: 2.5rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+
+    .eyebrow {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--sky); margin-bottom: 0.5rem;
+    }
+    .col-title {
+      font-size: 1.1rem; font-weight: 700; color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .col-desc {
+      font-size: 0.85rem; color: var(--light); line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    /* FORM */
+    .form-group { margin-bottom: 0.75rem; }
+    .form-input {
+      width: 100%; background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.65rem 0.875rem; color: var(--white);
+      font-family: var(--sans); font-size: 0.875rem;
+      outline: none; transition: border-color 0.15s; box-sizing: border-box;
+    }
+    .form-input::placeholder { color: var(--muted); }
+    .form-input:focus { border-color: var(--sky); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%; margin-top: 0.25rem; cursor: pointer; border: none;
+      font-family: var(--sans); background: var(--brand); color: var(--white);
+      padding: 0.7rem; border-radius: 8px; font-weight: 700; font-size: 0.875rem;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--accent); }
+
+    /* CAL BUTTONS */
+    .btn-cal {
+      display: block; text-align: center; background: var(--accent);
+      color: var(--white); text-decoration: none; font-weight: 700;
+      font-size: 0.875rem; letter-spacing: 0.02em;
+      padding: 0.8rem 1.5rem; border-radius: 8px;
+      transition: background 0.2s, transform 0.15s; margin-bottom: 0.6rem;
+    }
+    .btn-cal:hover { background: var(--sky); transform: translateY(-1px); }
+    .btn-cal-ghost {
+      display: block; text-align: center;
+      background: transparent; color: var(--white);
+      border: 1px solid var(--border); text-decoration: none; font-weight: 600;
+      font-size: 0.875rem; padding: 0.8rem 1.5rem; border-radius: 8px;
+      transition: border-color 0.2s, background 0.2s; margin-bottom: 0.6rem;
+    }
+    .btn-cal-ghost:hover { border-color: rgba(255,255,255,0.35); background: var(--frost); }
+    .cal-note { font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 0.25rem; }
+
+    /* FOOTER */
+    .ftr {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center;
+      padding: 0 2rem; border-top: 1px solid var(--border); background: rgba(10,25,50,0.6);
+    }
+    .ftr-left { display: flex; gap: 1.25rem; }
+    .ftr-left a, .ftr-right a {
+      color: var(--muted); text-decoration: none; font-size: 0.78rem; font-weight: 500; transition: color 0.15s;
+    }
+    .ftr-left a:hover, .ftr-right a:hover { color: var(--light); }
+    .ftr-center { text-align: center; font-size: 0.72rem; color: var(--muted); }
+    .ftr-right { display: flex; justify-content: flex-end; gap: 0.75rem; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="hdr">
+    <a class="hdr-name" href="./index.html">Wayne Kirk Schmidt</a>
+    <div class="hdr-center">
+      <span class="hdr-avail">Available · Fractional · Advisory · Full-time · Boston · Tokyo · Remote</span>
+    </div>
+    <div class="hdr-right">
+      <a class="hdr-nav-link" href="./about.html">About Me</a>
+      <a class="hdr-nav-link" href="https://casestudies.changeis.io">Case Studies</a>
+      <a class="hdr-cta" href="./contact.html">Get in Touch</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- FORM -->
+    <div class="col">
+      <div class="eyebrow">Send a Message</div>
+      <div class="col-title">Tell me what you are working on.</div>
+      <div class="col-desc">Drop a note and we will figure it out together. No agenda needed.</div>
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="399883e5-30c4-4ebe-a321-17d3baaf651f"/>
+        <input type="hidden" name="botcheck" value="" style="display:none;"/>
+        <input type="hidden" name="subject" value="New message from waynekirkschmidt.me"/>
+        <input type="hidden" name="redirect" value="https://waynekirkschmidt.me?sent=true"/>
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your name" required class="form-input"/>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your email" required class="form-input"/>
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Let's start at the beginning." rows="4" required class="form-input form-textarea"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="col-div"></div>
+
+    <!-- CAL -->
+    <div class="col">
+      <div class="eyebrow">Book a Call</div>
+      <div class="col-title">Pick a time. No preparation needed.</div>
+      <div class="col-desc">Just bring what is on your mind. We will start from there.</div>
+      <a href="https://cal.com/waynekirkschmidt/15min" target="_blank" class="btn-cal">
+        Let's say hello — 15 min
+      </a>
+      <a href="https://cal.com/waynekirkschmidt/60min" target="_blank" class="btn-cal-ghost">
+        Let's get to work — 60 min
+      </a>
+      <p class="cal-note">via Cal.com · No signup needed</p>
+    </div>
+
+  </main>
+
+  <footer class="ftr">
+    <div class="ftr-left">
+      <a href="https://changeis.io">ChangeIS</a>
+      <a href="https://casestudies.changeis.io">Case Studies</a>
+      <a href="https://backofthenapkin.tech">Blog</a>
+    </div>
+    <div class="ftr-center">Wayne Kirk Schmidt &middot; Boston &middot; Tokyo &middot; Global &middot; &copy; 2026</div>
+    <div class="ftr-right">
+      <a href="https://linkedin.com/in/waynekirkschmidt" target="_blank">LinkedIn</a>
+      <a href="https://github.com/wayne-kirk-schmidt" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

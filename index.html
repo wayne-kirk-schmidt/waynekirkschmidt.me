@@ -4,312 +4,340 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wayne Kirk Schmidt — Principal Technologist</title>
-  <meta name="description" content="Principal technologist and security platform builder. Decades of experience in ML/AI, DevOps, and security. Boston · Tokyo · Global."/>
+  <meta name="description" content="I help you make the most of your most important resource: your time. Principal technologist. Boston · Tokyo · Global."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="./background.webp" as="image" type="image/webp"/>
+  <link rel="dns-prefetch" href="https://changeis.io"/>
   <link rel="stylesheet" href="./styles.css"/>
-  <style>html { scroll-behavior: smooth; }</style>
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+
+    .page {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 58px 1fr 54px;
+    }
+
+    /* HEADER */
+    .hdr {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 0 2rem;
+      background: rgba(15,39,66,0.55);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .hdr-center {
+      display: flex;
+      justify-content: center;
+    }
+    .hdr-avail {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(33,163,102,0.15);
+      border: 1px solid rgba(33,163,102,0.35);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #7dffc4;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+    .hdr-avail::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #21a366;
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hdr-right {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      align-items: center;
+    }
+    .hdr-nav-link {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .hdr-nav-link:hover { color: var(--white); }
+    .hdr-cta {
+      background: var(--brand);
+      color: var(--white);
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.82rem;
+      transition: background 0.2s;
+    }
+    .hdr-cta:hover { background: var(--accent); }
+
+    /* MAIN — 3 columns */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr 1px 1fr;
+      overflow: hidden;
+    }
+    .col-div {
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+    .col {
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* LEFT — who */
+    .eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 1rem;
+    }
+    .col-left .tagline {
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--sky);
+      line-height: 1.45;
+      margin-bottom: 1.5rem;
+    }
+    .col-left .bio {
+      font-size: 0.9rem;
+      color: var(--light);
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+    .illumio {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: rgba(59,111,212,0.1);
+      border: 1px solid rgba(59,111,212,0.25);
+      border-radius: 9px;
+      padding: 0.7rem 0.875rem;
+      font-size: 0.8rem;
+      color: var(--light);
+      line-height: 1.5;
+    }
+    .illumio strong { color: var(--sky); }
+
+    /* CENTER — proof */
+    .proof-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+    }
+    .proof-item {
+      background: var(--frost);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+    .proof-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--sky);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .proof-label {
+      font-size: 0.82rem;
+      color: var(--light);
+      line-height: 1.55;
+    }
+
+    /* RIGHT — links */
+    .link-group { margin-bottom: 1.75rem; }
+    .link-group:last-child { margin-bottom: 0; }
+    .link-group .eyebrow { margin-bottom: 0.75rem; }
+    .doc-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--frost);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 0.7rem 1rem;
+      text-decoration: none;
+      margin-bottom: 0.4rem;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .doc-link:last-child { margin-bottom: 0; }
+    .doc-link:hover { border-color: rgba(255,255,255,0.28); background: var(--frost-md); }
+    .doc-link-name { font-size: 0.85rem; font-weight: 600; color: var(--white); }
+    .doc-link-arrow { font-size: 0.75rem; color: var(--sky); font-weight: 700; }
+
+    /* FOOTER */
+    .ftr {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 0 2rem;
+      border-top: 1px solid var(--border);
+      background: rgba(10,25,50,0.6);
+    }
+    .ftr-left { display: flex; gap: 1.25rem; }
+    .ftr-left a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .ftr-left a:hover { color: var(--light); }
+    .ftr-center {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .ftr-right {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+    }
+    .ftr-right a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .ftr-right a:hover { color: var(--light); }
+  </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="#">Wayne Kirk Schmidt</a>
-    <div class="nav-availability">Fractional &nbsp;·&nbsp; Advisory &nbsp;·&nbsp; Full-time &nbsp;·&nbsp; Boston &nbsp;·&nbsp; Tokyo &nbsp;·&nbsp; Remote</div>
-    <ul class="nav-links">
-      <li><a href="#capabilities">Capabilities</a></li>
-      <li><a href="#code">C.O.D.E.</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#documents">Documents</a></li>
-      <li><a href="#contact">Get in Touch</a></li>
-    </ul>
-  </nav>
+<div class="page">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1 class="hero-title" style="font-size:clamp(2rem,4.5vw,3.8rem)">
-        Wayne Kirk Schmidt.<br>
-        <em>The problems worth solving live at the intersection of adoption, operation, and adaptability.</em>
-      </h1>
-      <p class="hero-sub">
-        I have decades of experience building systems that solve them.
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Get in Touch</a>
-        <a href="https://casestudies.changeis.io" class="btn-ghost">View Case Studies</a>
-        <a href="https://changeis.io" class="btn-ghost">ChangeIS</a>
+  <!-- HEADER -->
+  <header class="hdr">
+    <a class="hdr-name" href="./index.html">Wayne Kirk Schmidt</a>
+    <div class="hdr-center">
+      <span class="hdr-avail">Available · Fractional · Advisory · Full-time · Boston · Tokyo · Remote</span>
+    </div>
+    <div class="hdr-right">
+      <a class="hdr-nav-link" href="./about.html">About Me</a>
+      <a class="hdr-nav-link" href="https://casestudies.changeis.io">Case Studies</a>
+      <a class="hdr-cta" href="./contact.html">Get in Touch</a>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- LEFT: who -->
+    <div class="col col-left">
+      <div class="eyebrow">Principal Technologist</div>
+      <div class="tagline">I help you make the most of your most important resource: your time.</div>
+      <div class="bio">
+        Decades of experience building systems at the intersection of Security, ML/AI, and DevOps.
+        Operating across finance, insurance, manufacturing, logistics, and technology.
+      </div>
+      <div class="illumio">
+        <strong>Production Perimeter</strong> &mdash; zero-trust security platform built by Wayne, acquired by Illumio.
       </div>
     </div>
-  </section>
 
-  <!-- CAPABILITIES -->
-  <section id="capabilities">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">What I Do</p>
-      <h2 class="section-title reveal">Three disciplines.<br>One integrated practice.</h2>
-      <p class="section-intro reveal">
-        Most practitioners specialize in one area. I operate at the intersection of all three
-        because the hardest problems live in the gaps between them.
-      </p>
-      <p class="cap-row-label reveal">The Disciplines</p>
-      <div class="cap-grid reveal">
-        <div class="cap-card">
-          <div class="cap-name">Security & Resilience</div>
-          <div class="cap-desc">Zero-trust architecture, ML-driven threat detection, and compliance automation across Tier-0 platforms. Creator of Production Perimeter, acquired by Illumio.</div>
-        </div>
-        <div class="cap-card">
-          <div class="cap-name">ML / AI Systems</div>
-          <div class="cap-desc">Production ML pipelines, adaptive reasoning systems, and edge-deployable AI. Patent holder in distributed AI orchestration — MORPHOS/9STACK©, private and adaptive.</div>
-        </div>
-        <div class="cap-card">
-          <div class="cap-name">DevOps & Platform Engineering</div>
-          <div class="cap-desc">Orchestration, CI/CD, infrastructure-as-code, and observability at scale. Built and operated 60,000+ host fleets. Systems that run themselves.</div>
-        </div>
-      </div>
+    <div class="col-div"></div>
 
-      <p class="cap-row-label reveal">The Delivery</p>
-      <div class="cap-grid reveal">
-        <div class="cap-card">
-          <div class="cap-name">Discovery &amp; Alignment</div>
-          <div class="cap-desc">Every engagement starts here and returns here. I map your real constraints, your actual team, your lived architecture. The engagement fits your reality, not a template.</div>
+    <!-- CENTER: proof -->
+    <div class="col col-center">
+      <div class="eyebrow">The Work</div>
+      <div class="proof-stack">
+        <div class="proof-item">
+          <div class="proof-num">$300M+</div>
+          <div class="proof-label">In measurable impact across finance, insurance, and technology. AMER, APAC, and EMEA.</div>
         </div>
-        <div class="cap-card">
-          <div class="cap-name">Operations &amp; Enablement</div>
-          <div class="cap-desc">Deployment, training, monitoring. Built for the team that runs it long after I am in the background. Continuity is the deliverable.</div>
+        <div class="proof-item">
+          <div class="proof-num">Led teams of 30+</div>
+          <div class="proof-label">Across 7 markets, 6 industries, and 3 regions.</div>
         </div>
-        <div class="cap-card">
-          <div class="cap-name">Governance &amp; Resilience</div>
-          <div class="cap-desc">Security, compliance, recovery, and privacy designed in from day one. Resilience is not a phase. It is a thread that runs through everything.</div>
+        <div class="proof-item">
+          <div class="proof-num">6 platforms</div>
+          <div class="proof-label">Built from zero. Including Production Perimeter, acquired by Illumio.</div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- CODE -->
-  <section id="code">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">How I Think</p>
-      <h2 class="section-title reveal">C.O.D.E.<sup class="code-copy">&copy;</sup></h2>
-      <p class="section-intro reveal">
-        The best systems don't just run: they learn.<br>Every platform I build is grounded in this principle.
-      </p>
-      <div class="code-diagram reveal">
-        <!-- Top row -->
-        <div class="code-card" id="code-c">
-          <div class="code-letter">C</div>
-          <div class="code-name">Collect</div>
-          <div class="code-desc">Gather the right data from the right sources. Signal over noise, from day one.</div>
-        </div>
-        <div class="code-arrow-top">
-          <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" class="arrow-svg" id="arrow-co">
-            <path d="M4 40 H95" stroke="var(--sky)" stroke-width="36" fill="none" stroke-linecap="butt" stroke-dasharray="91" stroke-dashoffset="91"/>
-            <polygon points="95,10 120,40 95,70" fill="var(--sky)" opacity="0"/>
-          </svg>
-        </div>
-        <div class="code-card" id="code-o">
-          <div class="code-letter">O</div>
-          <div class="code-name">Organize</div>
-          <div class="code-desc">Structure data for clarity. The right shape makes decisions possible.</div>
-        </div>
-        <!-- Right arrow down -->
-        <div class="code-arrow-right">
-          <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg" class="arrow-svg" id="arrow-od">
-            <path d="M40 4 V95" stroke="var(--sky)" stroke-width="36" fill="none" stroke-linecap="butt" stroke-dasharray="91" stroke-dashoffset="91"/>
-            <polygon points="10,95 40,120 70,95" fill="var(--sky)" opacity="0"/>
-          </svg>
-        </div>
-        <!-- Bottom row -->
-        <div class="code-card" id="code-e">
-          <div class="code-letter">E</div>
-          <div class="code-name">Evolve</div>
-          <div class="code-desc">Learn continuously. The system that ran yesterday should be smarter today.</div>
-        </div>
-        <div class="code-arrow-bottom">
-          <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" class="arrow-svg" id="arrow-de">
-            <path d="M116 40 H25" stroke="var(--sky)" stroke-width="36" fill="none" stroke-linecap="butt" stroke-dasharray="91" stroke-dashoffset="91"/>
-            <polygon points="25,10 0,40 25,70" fill="var(--sky)" opacity="0"/>
-          </svg>
-        </div>
-        <div class="code-card" id="code-d">
-          <div class="code-letter">D</div>
-          <div class="code-name">Decide</div>
-          <div class="code-desc">Act with confidence on what the data shows. No guessing. No hesitation.</div>
-        </div>
-        <!-- Left arrow up -->
-        <div class="code-arrow-left">
-          <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg" class="arrow-svg" id="arrow-ec">
-            <path d="M40 116 V25" stroke="var(--sky)" stroke-width="36" fill="none" stroke-linecap="butt" stroke-dasharray="91" stroke-dashoffset="91"/>
-            <polygon points="10,25 40,0 70,25" fill="var(--sky)" opacity="0"/>
-          </svg>
-        </div>
-      </div>
-      <p class="code-mindset reveal">My methodology is built on this mindset, and this mindset drives everything I build.</p>
-    </div>
-  </section>
+    <div class="col-div"></div>
 
-  <!-- RESULTS -->
-  <section id="results">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">The Results</p>
-      <h2 class="section-title reveal">Measured outcomes.<br>Real systems.</h2>
-      <p class="section-intro reveal">Delivery Case Studies each following the S.T.A.R.R.Y. framework.</p>
-      <div class="results-grid reveal">
-        <div class="result-item">        
-          <div class="result-text"><strong>$300M+</strong> measurable impact across products, services, and portfolios in AMER and APAC</div>
-        </div>
-        <div class="result-item">
-          <div class="result-text"><strong>$107M portfolio</strong>, led across 7 APAC markets, 30-person team, 15 global vendors at Nomura</div>
-        </div>
-        <div class="result-item">
-          <div class="result-text"><strong>90+ outcomes achieved.</strong> Platforms delivered in weeks. Operational stability in a month.</div>
-        </div>
-        <div class="result-item">
-          <div class="result-text"><strong>9+ patents</strong> in ML/AI orchestration, security automation, and distributed systems</div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:2.5rem;">
-        <a href="https://casestudies.changeis.io" class="btn-primary">Browse Case Studies</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOCUMENTS -->
-  <section id="documents">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">My Documents</p>
-      <h2 class="section-title reveal">This is me.</h2>
-      <p class="section-intro reveal">
-        Full CV, biography, and technical profile available for download.
-      </p>
-      <div class="docs-grid reveal">
-        <a class="doc-card" style="text-align:center;" href="./docs/WayneKirkSchmidt_CV.pdf" target="_blank">
-          <div class="doc-name">Curriculum Vitae</div>
-          <div class="doc-desc">Full career history, signature outcomes, products and patents, technical skills.</div>
-          <div class="doc-action">Download PDF</div>
+    <!-- RIGHT: documents + connect -->
+    <div class="col col-right">
+      <div class="link-group">
+        <div class="eyebrow">Documents</div>
+        <a class="doc-link" href="./docs/WayneKirkSchmidt_CV.pdf" target="_blank">
+          <span class="doc-link-name">Curriculum Vitae</span>
+          <span class="doc-link-arrow">PDF →</span>
         </a>
-        <a class="doc-card" style="text-align:center;" href="./docs/WayneKirkSchmidt_Bio.pdf" target="_blank">
-          <div class="doc-name">Biography</div>
-          <div class="doc-desc">Professional biography for speaking engagements, advisory boards, and introductions.</div>
-          <div class="doc-action">Download PDF</div>
+        <a class="doc-link" href="./docs/WayneKirkSchmidt_Bio.pdf" target="_blank">
+          <span class="doc-link-name">Biography</span>
+          <span class="doc-link-arrow">PDF →</span>
         </a>
-        <a class="doc-card" style="text-align:center;" href="./docs/WayneKirkSchmidt_Technical.pdf" target="_blank">
-          <div class="doc-name">Technical Profile</div>
-          <div class="doc-desc">Complete technical skills inventory across 50+ categories — languages, platforms, frameworks, and tools.</div>
-          <div class="doc-action">Download PDF</div>
+        <a class="doc-link" href="./docs/WayneKirkSchmidt_Technical.pdf" target="_blank">
+          <span class="doc-link-name">Technical Profile</span>
+          <span class="doc-link-arrow">PDF →</span>
+        </a>
+      </div>
+      <div class="link-group">
+        <div class="eyebrow">Connect</div>
+        <a class="doc-link" href="https://linkedin.com/in/waynekirkschmidt" target="_blank">
+          <span class="doc-link-name">LinkedIn</span>
+          <span class="doc-link-arrow">↗</span>
+        </a>
+        <a class="doc-link" href="https://github.com/wayne-kirk-schmidt" target="_blank">
+          <span class="doc-link-name">GitHub</span>
+          <span class="doc-link-arrow">↗</span>
+        </a>
+        <a class="doc-link" href="https://changeis.io" target="_blank">
+          <span class="doc-link-name">ChangeIS</span>
+          <span class="doc-link-arrow">↗</span>
+        </a>
+        <a class="doc-link" href="https://backofthenapkin.tech" target="_blank">
+          <span class="doc-link-name">Blog</span>
+          <span class="doc-link-arrow">↗</span>
         </a>
       </div>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-inner">
-      <p class="section-eyebrow">Get in Touch</p>
-      <h2 class="section-title">Where should we start?<br><em style="font-style:italic;color:var(--sky);">Tell me what you are working on.</em></h2>
-
-      <div class="contact-grid">
-
-        <!-- FORM -->
-        <div class="contact-card">
-          <p class="contact-card-label">Send a message</p>
-          <p class="contact-card-desc">Drop me a note and we will figure it out together.</p>
-          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="399883e5-30c4-4ebe-a321-17d3baaf651f">
-            <input type="hidden" name="botcheck" value="" style="display:none;">
-
-            <input type="hidden" name="subject" value="New message from waynekirkschmidt.me">
-            <input type="hidden" name="redirect" value="https://waynekirkschmidt.me?sent=true">
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Your name" required class="form-input">
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Your email" required class="form-input">
-            </div>
-            <div class="form-group">
-              <textarea name="message" placeholder="Let's start at the beginning." rows="4" required class="form-input form-textarea"></textarea>
-            </div>
-            <button type="submit" class="btn-primary form-submit">Send Message</button>
-          </form>
-        </div>
-
-        <!-- DIVIDER -->
-        <div class="contact-divider">
-          <span>or</span>
-        </div>
-
-        <!-- CAL -->
-        <div class="contact-card contact-card-cal" style="display: flex; flex-direction: column; gap: 0.5rem;">
-          <p class="contact-card-label">Book a call</p>
-          <p class="contact-card-desc">Want to talk? Pick a time. No agenda needed, just bring what is on your mind.</p>
-          <a href="https://cal.com/waynekirkschmidt/15min" target="_blank" class="btn-cal">
-            Let's say hello — 15 min
-          </a>
-          <a href="https://cal.com/waynekirkschmidt/60min" target="_blank" class="btn-cal">
-            Let's get to work — 60 min
-          </a>
-          <p class="contact-card-note">via Cal.com · No signup needed</p>
-        </div>
-
-      </div>
-
-      <div class="contact-links">
-        <a href="https://linkedin.com/in/waynekirkschmidt" class="contact-link">LinkedIn</a>
-        <a href="https://github.com/wayne-kirk-schmidt" class="contact-link">GitHub</a>
-        <a href="https://changeis.io" class="contact-link">ChangeIS</a>
-        <a href="https://casestudies.changeis.io" class="contact-link">Case Studies</a>
-        <a href="https://backofthenapkin.tech" class="contact-link">Blog</a>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
-    <span class="footer-name">Wayne Kirk Schmidt</span>
-    <span class="footer-copy">Boston · Tokyo · Global · © 2026</span>
+  <footer class="ftr">
+    <div class="ftr-left">
+      <a href="https://changeis.io">ChangeIS</a>
+      <a href="https://casestudies.changeis.io">Case Studies</a>
+      <a href="https://backofthenapkin.tech">Blog</a>
+    </div>
+    <div class="ftr-center">Wayne Kirk Schmidt &middot; Boston &middot; Tokyo &middot; Global &middot; &copy; 2026</div>
+    <div class="ftr-right">
+      <a href="https://linkedin.com/in/waynekirkschmidt" target="_blank">LinkedIn</a>
+      <a href="https://github.com/wayne-kirk-schmidt" target="_blank">GitHub</a>
+    </div>
   </footer>
 
-  <script>
-    // Existing reveal observer
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-
-    // C.O.D.E. arrow animation — fires once on scroll into view
-    const codeDiagram = document.querySelector('.code-diagram');
-    const arrowSequence = [
-      { path: '#arrow-co path', tip: '#arrow-co polygon', delay: 200 },
-      { path: '#arrow-od path', tip: '#arrow-od polygon', delay: 700 },
-      { path: '#arrow-de path', tip: '#arrow-de polygon', delay: 1200 },
-      { path: '#arrow-ec path', tip: '#arrow-ec polygon', delay: 1700 },
-    ];
-    let arrowsFired = false;
-    const arrowObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !arrowsFired) {
-          arrowsFired = true;
-          arrowSequence.forEach(({ path, tip, delay }) => {
-            setTimeout(() => {
-              const p = document.querySelector(path);
-              const t = document.querySelector(tip);
-              if (p) { p.style.transition = 'stroke-dashoffset 0.5s ease'; p.style.strokeDashoffset = '0'; }
-              if (t) { t.style.transition = 'opacity 0.2s ease 0.4s'; t.style.opacity = '1'; }
-            }, delay);
-          });
-          arrowObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    if (codeDiagram) arrowObserver.observe(codeDiagram);
-  </script>
+</div>
 
 </body>
 </html>
