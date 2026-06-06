@@ -23,17 +23,10 @@
       border-bottom: 1px solid var(--border);
     }
     .hdr-name { font-size: 1rem; font-weight: 700; color: var(--white); text-decoration: none; }
-    .hdr-avail {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: rgba(33,163,102,0.15); border: 1px solid rgba(33,163,102,0.35);
-      border-radius: 999px; padding: 4px 14px;
-      font-size: 0.72rem; font-weight: 700; color: #7dffc4; white-space: nowrap;
+    .hdr-location {
+      font-size: 0.85rem; font-weight: 600; color: #7dffc4;
+      text-align: center; white-space: nowrap;
     }
-    .hdr-avail::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: #21a366; animation: pulse 2s infinite; flex-shrink: 0;
-    }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
     .hdr-right { display: flex; justify-content: flex-end; gap: 1.5rem; align-items: center; }
     .hdr-link { color: var(--light); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.15s; }
     .hdr-link:hover { color: var(--white); }
@@ -86,10 +79,10 @@
     .ftr-left { display: flex; gap: 1.25rem; }
     .ftr-right { display: flex; justify-content: flex-end; gap: 1.25rem; }
     .ftr-left a, .ftr-right a {
-      color: var(--muted); text-decoration: none; font-size: 0.78rem; font-weight: 500; transition: color 0.15s;
+      color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.15s;
     }
     .ftr-left a:hover, .ftr-right a:hover { color: var(--light); }
-    .ftr-copy { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+    .ftr-copy { font-size: 0.85rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -97,10 +90,9 @@
 
   <header class="hdr">
     <a class="hdr-name" href="./index.html">Wayne Kirk Schmidt</a>
-    <span class="hdr-avail">Available · Fractional · Advisory · Full-time · Boston · Tokyo · Remote</span>
+    <span class="hdr-location">Boston · Tokyo · Global · © 2026</span>
     <div class="hdr-right">
       <a class="hdr-link" href="./about.html">About Me</a>
-      <a class="hdr-link" href="https://casestudies.changeis.io">Case Studies</a>
       <a class="hdr-cta" href="./contact.html">Get in Touch</a>
     </div>
   </header>
@@ -122,20 +114,21 @@
         <div class="proof-label">Built from zero. Including Production Perimeter, acquired by Illumio.</div>
       </div>
     </div>
-    <a class="results-link" href="https://casestudies.changeis.io">See Delivered Results →</a>
+    <a class="results-link" href="https://casestudies.changeis.io">Delivered Results</a>
   </main>
 
   <footer class="ftr">
     <div class="ftr-left">
-      <a href="./about.html">About Me</a>
-      <a href="https://changeis.io">ChangeIS</a>
-      <a href="https://backofthenapkin.tech">Blog</a>
-    </div>
-    <span class="ftr-copy">Wayne Kirk Schmidt · Boston · Tokyo · Global · © 2026</span>
-    <div class="ftr-right">
       <a href="https://linkedin.com/in/waynekirkschmidt" target="_blank">LinkedIn</a>
       <a href="https://github.com/wayne-kirk-schmidt" target="_blank">GitHub</a>
-      <a href="./contact.html">Get in Touch</a>
+      <a href="https://backofthenapkin.tech" target="_blank">Blog</a>
+      <a href="https://changeis.io" target="_blank">ChangeIS</a>
+    </div>
+    <span class="ftr-copy"></span>
+    <div class="ftr-right">
+      <a href="./docs/WayneKirkSchmidt_CV.pdf" target="_blank">Curriculum Vitae</a>
+      <a href="./docs/WayneKirkSchmidt_Bio.pdf" target="_blank">Biography</a>
+      <a href="./docs/WayneKirkSchmidt_Technical.pdf" target="_blank">Technical Profile</a>
     </div>
   </footer>
 
