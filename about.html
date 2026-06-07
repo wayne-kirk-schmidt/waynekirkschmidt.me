@@ -22,20 +22,10 @@
       position: sticky; top: 0; z-index: 100;
     }
     .hdr-name { font-size: 1rem; font-weight: 700; color: var(--white); text-decoration: none; }
-    .hdr-avail {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: rgba(33,163,102,0.15); border: 1px solid rgba(33,163,102,0.35);
-      border-radius: 999px; padding: 4px 14px;
-      font-size: 0.72rem; font-weight: 700; color: #7dffc4; white-space: nowrap;
-    }
-    .hdr-avail::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: #21a366; animation: pulse 2s infinite; flex-shrink: 0;
-    }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hdr-location { font-size: 0.85rem; font-weight: 600; color: #7dffc4; text-align: center; white-space: nowrap; }
     .hdr-right { display: flex; justify-content: flex-end; gap: 1.5rem; align-items: center; }
-    .hdr-link { color: var(--light); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.15s; }
-    .hdr-link:hover, .hdr-link.active { color: var(--white); }
+    .hdr-link { color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.15s; }
+    .hdr-link:hover { color: var(--sky); }
     .hdr-cta {
       background: var(--brand); color: var(--white); padding: 0.45rem 1.1rem;
       border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.82rem; transition: background 0.2s;
@@ -98,10 +88,10 @@
     .ftr-left { display: flex; gap: 1.25rem; }
     .ftr-right { display: flex; justify-content: flex-end; gap: 1.25rem; }
     .ftr-left a, .ftr-right a {
-      color: var(--muted); text-decoration: none; font-size: 0.78rem; font-weight: 500; transition: color 0.15s;
+      color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.15s;
     }
     .ftr-left a:hover, .ftr-right a:hover { color: var(--light); }
-    .ftr-copy { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+    .ftr-copy { font-size: 0.85rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -109,10 +99,9 @@
 
   <header class="hdr">
     <a class="hdr-name" href="./index.html">Wayne Kirk Schmidt</a>
-    <span class="hdr-avail">Available · Fractional · Advisory · Full-time · Boston · Tokyo · Remote</span>
+    <span class="hdr-location">Principal Technologist · Boston · Tokyo · Global</span>
     <div class="hdr-right">
-      <a class="hdr-link active" href="./about.html">About Me</a>
-      <a class="hdr-link" href="https://casestudies.changeis.io">Case Studies</a>
+      <a class="hdr-link" href="./about.html">About Me</a>
       <a class="hdr-cta" href="./contact.html">Get in Touch</a>
     </div>
   </header>
@@ -130,7 +119,7 @@
       </div>
       <div class="cap-card">
         <div class="cap-name">ML / AI Systems</div>
-        <div class="cap-desc">Production ML pipelines, adaptive reasoning systems, and edge-deployable AI. Patent holder in distributed AI orchestration — MORPHOS/9STACK©, private and adaptive.</div>
+        <div class="cap-desc">Production ML pipelines, adaptive reasoning systems, and edge-deployable AI. Patent holder in distributed AI orchestration. MORPHOS/9STACK, private and adaptive.</div>
       </div>
       <div class="cap-card">
         <div class="cap-name">DevOps &amp; Platform Engineering</div>
@@ -177,17 +166,17 @@
       <a class="doc-card" href="./docs/WayneKirkSchmidt_CV.pdf" target="_blank">
         <div class="doc-name">Curriculum Vitae</div>
         <div class="doc-desc">Full career history, signature outcomes, products and patents, technical skills.</div>
-        <div class="doc-action">Download PDF →</div>
+        <div class="doc-action">Download PDF</div>
       </a>
       <a class="doc-card" href="./docs/WayneKirkSchmidt_Bio.pdf" target="_blank">
         <div class="doc-name">Biography</div>
         <div class="doc-desc">Professional biography for speaking engagements, advisory boards, and introductions.</div>
-        <div class="doc-action">Download PDF →</div>
+        <div class="doc-action">Download PDF</div>
       </a>
       <a class="doc-card" href="./docs/WayneKirkSchmidt_Technical.pdf" target="_blank">
         <div class="doc-name">Technical Profile</div>
-        <div class="doc-desc">Complete technical skills inventory across 50+ categories — languages, platforms, frameworks, and tools.</div>
-        <div class="doc-action">Download PDF →</div>
+        <div class="doc-desc">Complete technical skills inventory across 50+ categories: languages, platforms, frameworks, and tools.</div>
+        <div class="doc-action">Download PDF</div>
       </a>
     </div>
 
@@ -195,15 +184,15 @@
 
   <footer class="ftr">
     <div class="ftr-left">
-      <a href="./index.html">Home</a>
-      <a href="https://changeis.io">ChangeIS</a>
-      <a href="https://backofthenapkin.tech">Blog</a>
-    </div>
-    <span class="ftr-copy">Wayne Kirk Schmidt · Boston · Tokyo · Global · © 2026</span>
-    <div class="ftr-right">
       <a href="https://linkedin.com/in/waynekirkschmidt" target="_blank">LinkedIn</a>
       <a href="https://github.com/wayne-kirk-schmidt" target="_blank">GitHub</a>
-      <a href="./contact.html">Get in Touch</a>
+      <a href="https://backofthenapkin.tech" target="_blank">Blog</a>
+    </div>
+    <span class="ftr-copy">© 2026</span>
+    <div class="ftr-right">
+      <a href="./docs/WayneKirkSchmidt_CV.pdf" target="_blank">Curriculum Vitae</a>
+      <a href="./docs/WayneKirkSchmidt_Bio.pdf" target="_blank">Biography</a>
+      <a href="./docs/WayneKirkSchmidt_Technical.pdf" target="_blank">Technical Profile</a>
     </div>
   </footer>
 
